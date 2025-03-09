@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang ôn thi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212; /* Màu nền tối */
+            color: #ffffff; /* Màu chữ trắng */
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .filter-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .filter-section label {
+            font-size: 18px;
+            margin-right: 10px;
+        }
+        .filter-section select {
+            padding: 5px 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            background-color: #1e1e1e;
+            color: #ffffff;
+            border: 1px solid #007bff;
+        }
+        .subject-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .subject-list li {
+            background-color: #1e1e1e; /* Màu nền thẻ tối */
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Đổ bóng đậm hơn */
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .subject-list li:hover {
+            background-color: #2a2a2a; /* Màu nền khi hover */
+        }
+        .subject-list img {
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+            border-radius: 5px;
+        }
+        .subject-list .content {
+            flex-grow: 1;
+        }
+        .subject-list a {
+            text-decoration: none;
+            color: #ffffff; /* Màu chữ trắng */
+            font-size: 18px;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .subject-list a:hover {
+            color: #007bff; /* Màu chữ khi hover */
+        }
+        .subject-list .description {
+            font-size: 14px;
+            color: #bbbbbb; /* Màu chữ mô tả */
+        }
+
+        /* Viền riêng biệt cho từng môn học */
+        .subject-list li[data-subject="math"] img {
+            border: 2px solid #007bff; /* Xanh dương cho Toán học */
+        }
+        .subject-list li[data-subject="physics"] img {
+            border: 2px solid #ff0000; /* Đỏ cho Vật lý */
+        }
+        .subject-list li[data-subject="chemistry"] img {
+            border: 2px solid #800080; /* Tím cho Hóa học */
+        }
+        .subject-list li[data-subject="literature"] img {
+            border: 2px solid #00ff00; /* Xanh lá cho Ngữ văn */
+        }
+    </style>
+</head>
+<body>
+    <h1>Trang ôn thi</h1>
+
+    <!-- Phần tùy chọn môn học -->
+    <div class="filter-section">
+        <label for="subject-filter">Chọn môn học:</label>
+        <select id="subject-filter" onchange="filterSubjects()">
+            <option value="all">Tất cả</option>
+            <option value="math">Toán học</option>
+            <option value="physics">Vật lý</option>
+            <option value="chemistry">Hóa học</option>
+            <option value="literature">Ngữ văn</option>
+        </select>
+    </div>
+
+    <!-- Danh sách các môn học -->
+    <ul class="subject-list">
+        <li data-subject="math" onclick="window.location.href='https://example.com/math1';">
+            <img src="https://example.com/math1.jpg" alt="Toán 1">
+            <div class="content">
+                <a href="https://example.com/math1">Ôn tập Đại số</a>
+                <div class="description">Tổng hợp các bài tập và lý thuyết về Đại số cơ bản và nâng cao.</div>
+            </div>
+        </li>
+        <li data-subject="math" onclick="window.location.href='https://example.com/math2';">
+            <img src="https://example.com/math2.jpg" alt="Toán 2">
+            <div class="content">
+                <a href="https://example.com/math2">Ôn tập Hình học</a>
+                <div class="description">Các dạng bài tập Hình học từ cơ bản đến phức tạp, kèm lời giải chi tiết.</div>
+            </div>
+        </li>
+        <li data-subject="physics" onclick="window.location.href='https://example.com/physics1';">
+            <img src="https://example.com/physics1.jpg" alt="Vật lý 1">
+            <div class="content">
+                <a href="https://example.com/physics1">Ôn tập Cơ học</a>
+                <div class="description">Lý thuyết và bài tập về Cơ học, bao gồm động lực học và tĩnh học.</div>
+            </div>
+        </li>
+        <li data-subject="physics" onclick="window.location.href='https://example.com/physics2';">
+            <img src="https://example.com/physics2.jpg" alt="Vật lý 2">
+            <div class="content">
+                <a href="https://example.com/physics2">Ôn tập Điện học</a>
+                <div class="description">Các khái niệm và bài tập về Điện học, mạch điện và từ trường.</div>
+            </div>
+        </li>
+        <li data-subject="chemistry" onclick="window.location.href='https://example.com/chemistry1';">
+            <img src="https://example.com/chemistry1.jpg" alt="Hóa học 1">
+            <div class="content">
+                <a href="https://example.com/chemistry1">Ôn tập Hóa vô cơ</a>
+                <div class="description">Các phản ứng và tính chất của các nguyên tố và hợp chất vô cơ.</div>
+            </div>
+        </li>
+        <li data-subject="chemistry" onclick="window.location.href='https://example.com/chemistry2';">
+            <img src="https://example.com/chemistry2.jpg" alt="Hóa học 2">
+            <div class="content">
+                <a href="https://example.com/chemistry2">Ôn tập Hóa hữu cơ</a>
+                <div class="description">Các hợp chất hữu cơ, phản ứng và cơ chế phản ứng trong Hóa hữu cơ.</div>
+            </div>
+        </li>
+        <li data-subject="literature" onclick="window.location.href='https://example.com/literature1';">
+            <img src="https://example.com/literature1.jpg" alt="Ngữ văn 1">
+            <div class="content">
+                <a href="https://example.com/literature1">Ôn tập Văn học Việt Nam</a>
+                <div class="description">Các tác phẩm văn học Việt Nam tiêu biểu và phân tích chi tiết.</div>
+            </div>
+        </li>
+        <li data-subject="literature" onclick="window.location.href='https://example.com/literature2';">
+            <img src="https://example.com/literature2.jpg" alt="Ngữ văn 2">
+            <div class="content">
+                <a href="https://example.com/literature2">Ôn tập Văn học nước ngoài</a>
+                <div class="description">Các tác phẩm văn học nước ngoài nổi tiếng và phân tích nội dung.</div>
+            </div>
+        </li>
+    </ul>
+
+    <script>
+        function filterSubjects() {
+            const selectedSubject = document.getElementById("subject-filter").value;
+            const items = document.querySelectorAll(".subject-list li");
+
+            items.forEach(item => {
+                if (selectedSubject === "all" || item.getAttribute("data-subject") === selectedSubject) {
+                    item.style.display = "flex"; // Hiển thị mục phù hợp
+                } else {
+                    item.style.display = "none"; // Ẩn mục không phù hợp
+                }
+            });
+        }
+
+        // Mặc định hiển thị tất cả khi trang được tải
+        document.addEventListener("DOMContentLoaded", filterSubjects);
+    </script>
+</body>
+</html>
