@@ -15,16 +15,16 @@
         h1 {
             color: #1DB954; /* Màu xanh lá của Spotify */
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 2px;
         }
         .subject-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px; /* Khoảng cách cố định giữa các phần tử */
+            gap: 12px; /* Khoảng cách cố định giữa các phần tử */
             justify-content: center;
         }
         .subject {
-            display: flex;
+            display: center;
             flex-direction: column;
             align-items: flex-start; /* Căn nội dung từ trái sang phải */
             text-align: left; /* Căn văn bản từ trái sang phải */
@@ -33,18 +33,18 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Viền bóng nhẹ */
             transition: transform 0.2s ease, box-shadow 0.2s ease; /* Hiệu ứng hover */
             background-color: transparent; /* Xóa nền */
-            width: 200px; /* Chiều rộng cố định cho mỗi môn học */
+            width: 100px; /* Chiều rộng cố định cho mỗi môn học */
         }
         .subject:hover {
             transform: translateY(-5px); /* Hiệu ứng nổi lên khi hover */
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Bóng đậm hơn khi hover */
         }
         .subject img {
-            width: 200px; /* Chiều rộng cố định */
-            height: 200px; /* Chiều cao cố định, tỉ lệ 1:1 */
+            width: 120px; /* Chiều rộng cố định */
+            height: 120px; /* Chiều cao cố định, tỉ lệ 1:1 */
             border-radius: 10px;
             object-fit: cover; /* Đảm bảo hình ảnh giữ tỉ lệ 1:1 */
-            border: 3px solid #1DB954; /* Viền màu xanh lá */
+            border: 1.4px solid #808080; /* Viền màu xanh lá */
         }
         .subject-info {
             margin-top: 10px;
@@ -69,48 +69,57 @@
 <body>
     <h1>Trang Ôn Thi</h1>
     <div class="subject-list">
-        <a href="toan-hoc.html" class="subject-link">
+        <!-- Tin học -->
+        <a href="tin-hoc.html" class="subject-link">
             <div class="subject">
-                <img src="https://via.placeholder.com/200" alt="Toán Học">
+                <img src="https://www.vietjack.com/sach-moi/images/sach-tin-hoc-lop-11-ket-noi-tri-thuc-sua2024-1.PNG" alt="Tin Học">
                 <div class="subject-info">
-                    <div class="subject-title">Toán Học</div>
-                    <div class="subject-description">Môn học về các con số, hình học và logic.</div>
+                    <div class="subject-title">Tin Học</div>
+                    <div class="subject-description">Môn học về cônh.</div>
                 </div>
             </div>
         </a>
+
+        <!-- Vật lý -->
         <a href="vat-ly.html" class="subject-link">
             <div class="subject">
-                <img src="https://via.placeholder.com/200" alt="Vật Lý">
+                <img src="https://chantroisangtao.vn/wp-content/uploads/2023/02/1-1.png" alt="Vật Lý">
                 <div class="subject-info">
                     <div class="subject-title">Vật Lý</div>
-                    <div class="subject-description">Môn học về các hiện tượng tự nhiên và định luật vật lý.</div>
+                    <div class="subject-description">Môn học về các hý.</div>
                 </div>
             </div>
         </a>
+
+        <!-- Hóa học -->
         <a href="hoa-hoc.html" class="subject-link">
             <div class="subject">
-                <img src="https://via.placeholder.com/200" alt="Hóa Học">
+                <img src="https://chantroisangtao.vn/wp-content/uploads/2023/02/1-3.png" alt="Hóa Học">
                 <div class="subject-info">
                     <div class="subject-title">Hóa Học</div>
-                    <div class="subject-description">Môn học về cấu trúc và tính chất của các chất.</div>
+                    <div class="subject-description">Môn hc về cấhất.</div>
                 </div>
             </div>
         </a>
+
+        <!-- Sinh học -->
         <a href="sinh-hoc.html" class="subject-link">
             <div class="subject">
-                <img src="https://via.placeholder.com/200" alt="Sinh Học">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz4oWSrBpLG41vnxULKmmzpR9MpcWF3a_MIA&s" alt="Sinh Học">
                 <div class="subject-info">
                     <div class="subject-title">Sinh Học</div>
-                    <div class="subject-description">Môn học về sự sống và các sinh vật.</div>
+                    <div class="subject-description">Môn học vt.</div>
                 </div>
             </div>
         </a>
-        <a href="van-hoc.html" class="subject-link">
+
+        <!-- Lịch sử -->
+        <a href="lich-su.html" class="subject-link">
             <div class="subject">
-                <img src="https://via.placeholder.com/200" alt="Văn Học">
+                <img src="https://product.hstatic.net/200000343833/product/bia_shs__page_29_b256d223092c4ffe996c619adfaf2184_master.jpg" alt="Lịch Sử">
                 <div class="subject-info">
-                    <div class="subject-title">Văn Học</div>
-                    <div class="subject-description">Môn học về văn chương và ngôn ngữ.</div>
+                    <div class="subject-title">Lịch Sử</div>
+                    <div class="subject-description">Môn họloại.</div>
                 </div>
             </div>
         </a>
