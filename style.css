@@ -49,3 +49,72 @@
   z-index: 1;
 }
 
+.subject img {
+    transition: transform 0.3s ease;
+}
+
+.subject img:hover {
+    transform: scale(1.08);
+}
+
+body {
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.subject img {
+    width: 160px;
+    height: 160px;
+    border-radius: 15px;
+    object-fit: cover;
+    border: 1.4px solid #808080;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Thêm transition */
+}
+
+.subject img:hover {
+    transform: scale(1.05); /* Phóng to nhẹ */
+    box-shadow: 0 0 15px 5px rgba(29, 185, 84, 0.6); /* Hiệu ứng glow màu xanh lá */
+}
+.subject img {
+    width: 160px;
+    height: 160px;
+    border-radius: 15px;
+    object-fit: cover;
+    border: 1.4px solid #808080;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Thêm transition */
+}
+
+.subject img:hover {
+    transform: scale(1.08); /* Phóng to nhẹ */
+    box-shadow: 0 0 15px 5px rgba(0, 128, 0, 1); /* Hiệu ứng glow màu xanh lá */
+}
+
+.report-button {
+    position: fixed; /* Cố định vị trí */
+    bottom: 20px; /* Cách đáy trang 20px */
+    right: 20px; /* Cách lề trái 20px */
+    padding: 10px 20px; /* Kích thước padding */
+    background-color: #000000; /* Màu nền */
+    color: #fff; /* Màu chữ */
+    text-decoration: none; /* Bỏ gạch chân */
+    border-radius: 40px; /* Bo tròn góc */
+    font-size: 16px; /* Kích thước chữ */
+    font-weight: bold; /* Đậm chữ */
+    box-shadow: 0 4px 6px rgba(0, 28, 0, 1); /* Đổ bóng */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Hiệu ứng mượt */
+    z-index: 1000; /* Đảm bảo nút hiển thị trên các phần tử khác */
+    border: 2px solid #ffffff;
+}
+
+.report-button:hover {
+    background-color: #ff0000; /* Đổi màu nền khi di chuột qua */
+    transform: translateY(-5px); /* Nhấn nhẹ nút lên */
+}
+
+.report-button:active {
+    transform: translateY(0); /* Trả lại vị trí ban đầu khi nhấn */
+}
+
