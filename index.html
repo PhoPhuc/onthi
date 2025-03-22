@@ -1,205 +1,120 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css"> <!-- Liên kết file CSS -->
-    <link rel="icon" type="image/png" href="https://www.freeiconspng.com/uploads/study-icon-19.png">
-    <title>Trang Ôn Thi</title>
-    <style>
-        body {
-            font-family: Montserrat, sans-serif;
-            background-color: #000;
-            color: #fff;
-            padding: 15px;
-            margin: auto;
-        }
-        h1 {
-            color: #fff;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .subject-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1px;
-            justify-content: center;
-        }
-        .subject {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: left;
-            padding: 10px;
-            border-radius: 15px;
-            box-shadow: 0 10px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            background-color: transparent;
-            width: 160px;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInSlideUp 0.8s ease forwards;
-            margin: 0px;
-        }
-        .subject:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-        }
-        .subject img {
-            width: 160px;
-            height: 160px;
-            border-radius: 15px;
-            object-fit: cover;
-            border: 1.4px solid #808080;
-        }
-        .subject-info {
-            margin-top: 8px;
-            width: 100%;
-        }
-        .subject-title {
-            font-size: 16px;
-            font-weight: bold;
-            color: #fff;
-            margin-bottom: 4px;
-        }
-        .subject-link {
-            text-decoration: none;
-            color: inherit;
-        }
+.group {
+  display: flex;
+  line-height: 28px;
+  align-items: center;
+  position: relative;
+  max-width: 190px;
+}
 
-        @keyframes fadeInSlideUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+.input {
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
+  height: 45px;
+  padding-left: 2.5rem;
+  align-items: center;
+  box-shadow: 0 0 0 1.5px #2b2c37, 0 0 25px -17px #000;
+  border: 0;
+  border-radius: 12px;
+  background-color: #16171d;
+  outline: none;
+  color: #bdbecb;
+  transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+  cursor: text;
+  z-index: 0;
+}
 
-        .group {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 0px;
-            position: relative;
-            width: 100%;
-            max-width: 190px;
-            margin: 0 auto 20px;
-        }
+.input::placeholder {
+  color: #bdbecb;
+}
 
-        .search-icon {
-            width: 20px;
-            height: 20px;
-            position: absolute;
-            left: 12px;
-            fill: #b3b3b3;
-        }
+.input:hover {
+  box-shadow: 0 0 0 2.5px #2f303d, 0px 0px 25px -15px #000;
+}
 
-        .input {
-            width: 100%;
-            padding: 10px 10px 10px 40px;
-            border-radius: 25px;
-            border: 1px solid #808080;
-            background-color: transparent;
-            color: #fff;
-            font-size: 16px;
-            outline: none;
-            transition: border-color 0.3s ease;
-        }
+.input:active {
+  transform: scale(0.95);
+}
 
-        .input:focus {
-            border-color: #1DB954;
-        }
+.input:focus {
+  box-shadow: 0 0 0 2.5px #2f303d;
+}
 
-        .input::placeholder {
-            color: #b3b3b3;
-        }
-    </style>
-</head>
-<body>
-    <h1>Trang Ôn Thi</h1>
-    <div class="group">
-        <svg viewBox="0 0 24 24" aria-hidden="true" class="search-icon">
-            <g>
-                <path
-                    d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"
-                ></path>
-            </g>
-        </svg>
-        <input
-            id="query"
-            class="input"
-            type="search"
-            placeholder="Search..."
-            name="searchbar"
-        />
-    </div>
-    <div class="subject-list">
-        <!-- Tin học -->
-        <a href="tin-hoc.html" class="subject-link">
-            <div class="subject">
-                <img src="https://www.vietjack.com/sach-moi/images/sach-tin-hoc-lop-11-ket-noi-tri-thuc-sua2024-1.PNG" alt="Tin Học">
-                <div class="subject-info">
-                    <div class="subject-title">Tin Học</div>
-                </div>
-            </div>
-        </a>
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  fill: #bdbecb;
+  width: 1rem;
+  height: 1rem;
+  pointer-events: none;
+  z-index: 1;
+}
 
-        <!-- Vật lý -->
-        <a href="vat-ly.html" class="subject-link">
-            <div class="subject">
-                <img src="https://chantroisangtao.vn/wp-content/uploads/2023/02/1-1.png" alt="Vật Lý">
-                <div class="subject-info">
-                    <div class="subject-title">Vật Lý</div>
-                </div>
-            </div>
-        </a>
+.subject img {
+    transition: transform 0.3s ease;
+}
 
-        <!-- Hóa học -->
-        <a href="hoa-hoc.html" class="subject-link">
-            <div class="subject">
-                <img src="https://chantroisangtao.vn/wp-content/uploads/2023/02/1-3.png" alt="Hóa Học">
-                <div class="subject-info">
-                    <div class="subject-title">Hóa Học</div>
-                </div>
-            </div>
-        </a>
+.subject img:hover {
+    transform: scale(1.08);
+}
 
-        <!-- Sinh học -->
-        <a href="sinh-hoc.html" class="subject-link">
-            <div class="subject">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz4oWSrBpLG41vnxULKmmzpR9MpcWF3a_MIA&s" alt="Sinh Học">
-                <div class="subject-info">
-                    <div class="subject-title">Sinh Học</div>
-                </div>
-            </div>
-        </a>
+body {
+    animation: fadeIn 1s ease;
+}
 
-        <!-- Lịch sử -->
-        <a href="lich-su.html" class="subject-link">
-            <div class="subject">
-                <img src="https://product.hstatic.net/200000343833/product/bia_shs__page_29_b256d223092c4ffe996c619adfaf2184_master.jpg" alt="Lịch Sử">
-                <div class="subject-info">
-                    <div class="subject-title">Lịch Sử</div>
-                </div>
-            </div>
-        </a>
-    </div>
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.subject img {
+    width: 160px;
+    height: 160px;
+    border-radius: 15px;
+    object-fit: cover;
+    border: 1.4px solid #808080;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Thêm transition */
+}
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const searchInput = document.getElementById("query");
-            const subjects = document.querySelectorAll(".subject");
+.subject img:hover {
+    transform: scale(1.05); /* Phóng to nhẹ */
+    box-shadow: 0 0 15px 5px rgba(29, 185, 84, 0.6); /* Hiệu ứng glow màu xanh lá */
+}
+.subject img {
+    width: 160px;
+    height: 160px;
+    border-radius: 15px;
+    object-fit: cover;
+    border: 1.4px solid #808080;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Thêm transition */
+}
 
-            searchInput.addEventListener("input", function () {
-                const searchTerm = searchInput.value.trim().toLowerCase();
+.subject img:hover {
+    transform: scale(1.08); /* Phóng to nhẹ */
+    box-shadow: 0 0 15px 5px rgba(0, 128, 0, 1); /* Hiệu ứng glow màu xanh lá */
+}
 
-                subjects.forEach((subject) => {
-                    const title = subject.querySelector(".subject-title").textContent.toLowerCase();
-                    if (title.includes(searchTerm)) {
-                        subject.style.display = "flex";
-                    } else {
-                        subject.style.display = "none";
-                    }
-                });
-            });
-        });
-    </script>
-</body>
-</html>
+.report-button {
+    position: fixed; /* Cố định vị trí */
+    bottom: 20px; /* Cách đáy trang 20px */
+    right: 20px; /* Cách lề trái 20px */
+    padding: 10px 20px; /* Kích thước padding */
+    background-color: #000000; /* Màu nền */
+    color: #fff; /* Màu chữ */
+    text-decoration: none; /* Bỏ gạch chân */
+    border-radius: 40px; /* Bo tròn góc */
+    font-size: 16px; /* Kích thước chữ */
+    font-weight: bold; /* Đậm chữ */
+    box-shadow: 0 4px 6px rgba(0, 28, 0, 1); /* Đổ bóng */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Hiệu ứng mượt */
+    z-index: 1000; /* Đảm bảo nút hiển thị trên các phần tử khác */
+    border: 2px solid #ffffff;
+}
+
+.report-button:hover {
+    background-color: #ff0000; /* Đổi màu nền khi di chuột qua */
+    transform: translateY(-5px); /* Nhấn nhẹ nút lên */
+}
+
+.report-button:active {
+    transform: translateY(0); /* Trả lại vị trí ban đầu khi nhấn */
+}
+
